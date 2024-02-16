@@ -67,6 +67,9 @@ Ok achando o mesmo vamos configurar o computador para o domínio:
 Iniciar+r e escreva sysdm.cpl e da enter.
 
 
+
+
+
    
 
 
