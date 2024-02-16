@@ -38,7 +38,34 @@ Implementação e configuração do Active Directory
 
 
 Agora a criação do grupo que não deixa de ser nenhum pouco importante, pois o grupo fornece variações de permissões mas ele fornece uma coisa bastante importante que é a segurança, pois o mesmo consegue está controlando o acesso
-a site A ou a site B, se o mesmo tem permissão de acesso a pasta de rede, 
+a site A ou a site B, se o mesmo tem permissão de acesso a pasta de rede, vpn e etc.
+
+
+
+
+
+Estrutura;
+
+
+
+
+
+Agora subindo outra VM com windows 10 para ser colocada no domínio e acessar uma conta que já está criada no AD;
+Ao iniciar vamos entrar no perfil do administrador e assim colocar no domínio. Quando estiver na tela de área de trabalho, usar o atalho iniciar+R e escrever ncpa.cpl e enter.
+Atividar adaptadores e após ir em propriedades e dar dois cliques no IPVA4,
+E nisso vamos configurá-lo podemos deixar no DHCP e configurar somente o DNS para o Windows server que acha.
+
+
+
+
+
+
+
+
+
+Ok achando o mesmo vamos configurar o computador para o domínio:
+Iniciar+r e escreva sysdm.cpl e da enter.
+
 
    
 
