@@ -64,14 +64,62 @@ E nisso vamos configurá-lo podemos deixar no DHCP e configurar somente o DNS pa
 
 
 Ok achando o mesmo vamos configurar o computador para o domínio:
-Iniciar+r e escreva sysdm.cpl e da enter.
+Iniciar+r e escreva sysdm.cpl e da enter, ao entrar vai em alterar e depois selecione domínio e coloque o domínio criado anteriormente, acabando vai pedir para reiniciar.
 
 
+
+Ao reiniciar você já pode colocar um usuário de rede, se você observar a print tem entrar em: GABRIELSECURITY (Domínio)
+
+
+
+Voltando no Windows Server 2012 R2 podemos criar uma pasta compartilhada via rede, então criamos essa *securityfile** e fomos em propriedades>compartilhamento>compartilhamento advanced sharing e nisso selecionamos a opção de compartilhar essa pasta, ao ir no permissions podemos está adicionando usuário e sua permissão como; acesso total, leitura, escrita e etc.
+
+
+e para melhoramos o ambiente para o usuário criamos uma pasta de rede para o próprio, então toda vez que o mesmo entrar vai subir uma pasta de rede do usuário dele. Vamos ir em users no AD>Propriedades>Profile e tem a opção de se conectar a uma unidade de rede e o local da pasta ao adicionar e a pessoa logar pela primeira vez deverá subir o sistema da pasta.
+código: \\server\pasta$\%username%
+
+
+
+Agora iremos configurar Shadow Copies, vamos em este computador>botão direito> shadow copies.
+
+
+
+
+Vamos em settings para podermos inserir a quantidade de cota da shadow copies depois de aplicar já está como enable, podemos apertar no botão de create now
+
+
+
+
+Criei um arquivo teste.txt de teste, porém o arquivo só irá ser feito o shadow copie dele ás 7horas da manhã pois o horário setado.
 
 
 
    
+Iremos criar de novo, após foi excluído o mesmo.
+Então voltamos ao c:/ e fomos até a pasta que teve o arquivo excluído e fomos em propriedades>versões anteriores. Selecionamos a data/hora no qual o arquivo não estava excluído. 
+E vamos em abrir/open
 
+
+
+
+   Como por redundância e questões de segurança, iremos criar um sistema de backup nativo do Windows server.
+   No qual iremos criar um novo recurso a parti do wizard ao qual o caminho seria abrir o server manager>dashboard>next até features/recursos, selecionar backup do Windows server e instalar. 
 
    
+  Ok já instalado você irá abrir ferramentas>backup do Windows server
+  Agora iremos em opções de backup/backup once/ backup unico
+
+  Colocamos em opções diferente
+
+
+
+  Seleção de configuração de backup foi colocado custom/personalizado 
+
+
+  Entao na próximo etapa escolhemos o item que deverá ser feito o backup
+
+
+
+  Agora para finalizar só avançar até confirmação e realizar o backup
+
   
