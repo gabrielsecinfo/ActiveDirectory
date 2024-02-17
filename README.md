@@ -39,7 +39,7 @@ Implementação e configuração do Active Directory
 Agora a criação do grupo que não deixa de ser nenhum pouco importante, pois o grupo fornece variações de permissões mas ele fornece uma coisa bastante importante que é a segurança, pois o mesmo consegue está controlando o acesso
 a site A ou a site B, se o mesmo tem permissão de acesso a pasta de rede, vpn e etc.
 
-
+obs: o tipo de grupo utilizado é de segurança porém o de distruição seria mais para e-mails.
 
 
 
@@ -95,8 +95,10 @@ Criei um arquivo teste.txt de teste, porém o arquivo só irá ser feito o shado
 
    
 Iremos criar de novo, após foi excluído o mesmo.
-Então voltamos ao c:/ e fomos até a pasta que teve o arquivo excluído e fomos em propriedades>versões anteriores. Selecionamos a data/hora no qual o arquivo não estava excluído. 
-E vamos em abrir/open
+Então voltamos ao c:/ e fomos até a pasta que teve o arquivo excluído e fomos em propriedades>versões anteriores.
+
+
+Selecionamos a data/hora no qual o arquivo não estava excluído e vamos em abrir/open
 
 
 
