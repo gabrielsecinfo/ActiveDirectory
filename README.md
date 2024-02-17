@@ -1,8 +1,7 @@
 # ActiveDirectory
 Implementação e configuração do Active Directory
 
-  A execução bem-sucedida da implementação e configuração do Active Directory é crucial para estabelecer um ambiente de rede eficiente. Este guia fornece um passo a passo, demonstrando como criar o primeiro usuário, grupo e pasta de rede, shadow copies e backup nativo do windows server.
-  Conforme foi criado o windows server 2012 para subir o AD, então iremos continuar por ele. Link da configuração do mesmo: https://github.com/gabrielsecinfo/WindowsServerAD.git
+  A correta execução da implementação e configuração do Active Directory é crucial para estabelecer um ambiente de rede eficiente. Este guia fornece um passo a passo, demonstrando como criar o primeiro usuário, grupo e pasta de rede, além de abordar conceitos como shadow copies e backup nativo do Windows Server. O ambiente utilizado é baseado no Windows Server 2012, e o link para a configuração está disponível em:  https://github.com/gabrielsecinfo/WindowsServerAD.git
 
   A criação do primeiro user é bem simples, botão direito em cima da pasta user depois ir em new>user após aparecer a tela você ira preencher 
   O primeiro nome, inicial e último nome e qual seria o logon. 
