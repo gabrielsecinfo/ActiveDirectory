@@ -85,7 +85,7 @@ Agora iremos configurar Shadow Copies, vamos em este computador>seu disco>botão
 
 Vamos em settings para podermos inserir a quantidade de cota da shadow copies depois de aplicar já está como enable, podemos apertar no botão de create now
 
-<img src="AD/">
+<img src="AD/image27.png">
 
 
 Criei um arquivo teste.txt de teste, porém o arquivo só irá ser feito o shadow copie dele ás 7horas da manhã pois o horário setado.
@@ -128,7 +128,7 @@ Selecionamos a data/hora no qual o arquivo não estava excluído e vamos em abri
 
   Entao na próximo etapa escolhemos o item que deverá ser feito o backup
 
-
+<img src="AD/image25.png">
 
   Agora para finalizar só avançar até confirmação e realizar o backup
 
