@@ -5,39 +5,37 @@ Implementação e configuração do Active Directory
 
   A criação do primeiro user é bem simples, botão direito em cima da pasta user depois ir em new>user após aparecer a tela você ira preencher 
   O primeiro nome, inicial e último nome e qual seria o logon. 
-
-
-
+<img src="AD/image.png">
 
   Conforme o avançar irá solicitar uma senha pra esse usuário e vai aparecer opções como:
    Senha nunca expíra, conta desativada, user não pode mudar a senha e que vai ser alterada no próximo logon:
-
-
-
+<img src="AD/image1.png">
 
    O usuário como teste foi criado normalmente como a print abaixo demostra:
 
-
+<img src="AD/image2.png">
 
    A configuração do mesmo é feita em suas propriedades no qual caminho seria botão direito>propriedades
-
+<img src="AD/image3.png">
 
 
    Nessa propriedades tem diversas opções como  sessões, organizações, seu perfil, seu perfil de acesso remoto,  quais grupos você e membro e etc.
 
-
+<img src="AD/image4.png">
 
    Na guia de membros iremos adicionar um grupo, ao qual irá ser aberto um menu e um campo ser digitado o nome do grupo (Um objeto que exista), no exemplo irá ser usado grupo de administrador:
 
-
+<img src="AD/image5.png">
 
    Demostrando os grupos que faço parte:
 
-
+<img src="AD/image6.png">
 
 
 Agora a criação do grupo que não deixa de ser nenhum pouco importante, pois o grupo fornece variações de permissões mas ele fornece uma coisa bastante importante que é a segurança, pois o mesmo consegue está controlando o acesso
 a site A ou a site B, se o mesmo tem permissão de acesso a pasta de rede, vpn e etc.
+
+<img src="AD/image7.png">
 
 obs: o tipo de grupo utilizado é de segurança porém o de distruição seria mais para e-mails.
 
@@ -46,7 +44,7 @@ obs: o tipo de grupo utilizado é de segurança porém o de distruição seria m
 Estrutura;
 
 
-
+<img src="AD/image8.png">
 
 
 Agora subindo outra VM com windows 10 para ser colocada no domínio e acessar uma conta que já está criada no AD;
