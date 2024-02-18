@@ -21,11 +21,11 @@ Implementação e configuração do Active Directory
 
    Nessa propriedades tem diversas opções como  sessões, organizações, seu perfil, seu perfil de acesso remoto,  quais grupos você e membro e etc.
 
-<img src="AD/image4.png">
+<img src="AD/image3.png">
 
    Na guia de membros iremos adicionar um grupo, ao qual irá ser aberto um menu e um campo ser digitado o nome do grupo (Um objeto que exista), no exemplo irá ser usado grupo de administrador:
 
-<img src="AD/image5.png">
+<img src="AD/image4.png">
 
    Demostrando os grupos que faço parte:
 
