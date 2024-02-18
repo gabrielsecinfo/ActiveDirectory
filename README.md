@@ -52,6 +52,7 @@ Agora subindo outra VM com windows 10 para ser colocada no domínio e acessar um
 Ao iniciar vamos entrar no perfil do administrador e assim colocar no domínio. Quando estiver na tela de área de trabalho, usar o atalho iniciar+R e escrever ncpa.cpl e enter.
 Atividar adaptadores e após ir em propriedades e dar dois cliques no IPVA4,
 E nisso vamos configurá-lo podemos deixar no DHCP e configurar somente o DNS para o Windows server que acha.
+
 <img src="AD/image9.png">
 
 
