@@ -1,136 +1,116 @@
 # ActiveDirectory
-Implementação e configuração do Active Directory
+## Implementação e configuração do Active Directory
 
-  A execução da implementação e configuração do Active Directory é crucial para estabelecer um ambiente de rede eficiente. Este guia fornece um passo a passo, demonstrando como criar o primeiro usuário, grupo e pasta de rede, além de abordar conceitos como shadow copies e backup nativo do Windows Server. O ambiente utilizado é baseado no Windows Server 2012, e o link para a configuração está disponível em:  https://github.com/gabrielsecinfo/WindowsServerAD.git
+A execução da implementação e configuração do Active Directory é crucial para estabelecer um ambiente de rede eficiente. Este guia fornece um passo a passo, demonstrando como criar o primeiro usuário, grupo e pasta de rede, além de abordar conceitos como shadow copies e backup nativo do Windows Server. O ambiente utilizado é baseado no Windows Server 2012, e o link para a configuração está disponível em: [https://github.com/gabrielsecinfo/WindowsServerAD.git](https://github.com/gabrielsecinfo/WindowsServerAD.git)
 
-  A criação do primeiro user é bem simples, botão direito em cima da pasta user depois ir em new>user após aparecer a tela você ira preencher 
-  O primeiro nome, inicial e último nome e qual seria o logon. 
-<img src="AD/image.png">
+A criação do primeiro usuário é bem simples, clique com o botão direito em cima da pasta user, depois vá em new > user. Após aparecer a tela, você irá preencher o primeiro nome, inicial e último nome e qual seria o logon.
 
-  Conforme o avançar irá solicitar uma senha pra esse usuário e vai aparecer opções como:
-   Senha nunca expíra, conta desativada, user não pode mudar a senha e que vai ser alterada no próximo logon:
-<img src="AD/image1.png">
+![Usuário](AD/image.png)
 
-   O usuário como teste foi criado normalmente como a print abaixo demostra:
+Conforme o avançar, irá solicitar uma senha para esse usuário e vai aparecer opções como:
+- Senha nunca expira
+- Conta desativada
+- Usuário não pode mudar a senha
+- Senha a ser alterada no próximo logon
 
-<img src="AD/image2.png">
+![Opções de Senha](AD/image1.png)
 
-   A configuração do mesmo é feita em suas propriedades no qual caminho seria botão direito>propriedades
-<img src="AD/image3.png">
+O usuário como teste foi criado normalmente, como a seguinte imagem demonstra:
 
+![Usuário Teste](AD/image2.png)
 
-   Nessa propriedades tem diversas opções como  sessões, organizações, seu perfil, seu perfil de acesso remoto,  quais grupos você e membro e etc.
+A configuração do mesmo é feita em suas propriedades, no qual caminho seria botão direito > propriedades.
 
-<img src="AD/image3.png">
+![Propriedades do Usuário](AD/image3.png)
 
-   Na guia de membros iremos adicionar um grupo, ao qual irá ser aberto um menu e um campo ser digitado o nome do grupo (Um objeto que exista), no exemplo irá ser usado grupo de administrador:
+Nessas propriedades tem diversas opções como sessões, organizações, seu perfil, seu perfil de acesso remoto, quais grupos você é membro, etc.
 
-<img src="AD/image4.png">
+![Propriedades do Usuário](AD/image3.png)
 
-   Demostrando os grupos que faço parte:
+Na guia de membros, iremos adicionar um grupo, ao qual será aberto um menu e um campo para digitar o nome do grupo (um objeto que exista). No exemplo, será usado o grupo de administrador:
 
-<img src="AD/image5.png">
+![Adicionar ao Grupo](AD/image4.png)
 
+Demonstrando os grupos que faço parte:
 
-Agora a criação do grupo que não deixa de ser nenhum pouco importante, pois o grupo fornece variações de permissões mas ele fornece uma coisa bastante importante que é a segurança, pois o mesmo consegue está controlando o acesso
-a site A ou a site B, se o mesmo tem permissão de acesso a pasta de rede, vpn e etc.
+![Grupos](AD/image5.png)
 
-<img src="AD/image6.png">
-<img src="AD/image7.png">
+Agora, a criação do grupo, que é muito importante, pois o grupo fornece variações de permissões e, mais importante, segurança, controlando o acesso a sites, permissões de acesso a pasta de rede, VPN, etc.
 
-obs: o tipo de grupo utilizado é de segurança porém o de distruição seria mais para e-mails.
+![Criação de Grupo](AD/image6.png)
+![Criação de Grupo](AD/image7.png)
 
+Obs: O tipo de grupo utilizado é de segurança, porém o de distribuição seria mais para e-mails.
 
+Estrutura:
 
-Estrutura;
+![Estrutura](AD/image8.png)
 
+Agora, subindo outra VM com Windows 10 para ser colocada no domínio e acessar uma conta que já está criada no AD;
 
-<img src="AD/image8.png">
+Ao iniciar, vamos entrar no perfil do administrador e assim colocá-lo no domínio. Quando estiver na tela de área de trabalho, use o atalho Win+R, escreva ncpa.cpl e pressione Enter. Ative os adaptadores e, após, vá em propriedades e dê dois cliques no IPv4. Podemos configurá-lo para deixar no DHCP e configurar somente o DNS para o Windows Server.
 
+![Configuração de Rede](AD/image9.png)
 
-Agora subindo outra VM com windows 10 para ser colocada no domínio e acessar uma conta que já está criada no AD;
-Ao iniciar vamos entrar no perfil do administrador e assim colocar no domínio. Quando estiver na tela de área de trabalho, usar o atalho iniciar+R e escrever ncpa.cpl e enter.
-Ativar adaptadores e após ir em propriedades e dar dois cliques no IPVA4,
-E nisso vamos configurá-lo podemos deixar no DHCP e configurar somente o DNS para o Windows server que acha.
+Configurando o computador para o domínio:
+Win+R, escreva sysdm.cpl e pressione Enter. Ao entrar, vá em alterar e depois selecione domínio e coloque o domínio criado anteriormente. Após terminar, será pedido para reiniciar.
 
-<img src="AD/image9.png">
+![Configuração de Domínio](AD/image10.png)
+![Configuração de Domínio](AD/image11.png)
 
+Ao reiniciar, você já pode usar um usuário de rede. Se observar a imagem, tem a opção de entrar em: GABRIELSECURITY (Domínio).
 
+![Login no Domínio](AD/image12.png)
 
+Voltando no Windows Server 2012 R2, podemos criar uma pasta compartilhada via rede. Então criamos a pasta securityfile e fomos em propriedades > compartilhamento > compartilhamento avançado (advanced sharing), selecionando a opção de compartilhar essa pasta. Ao ir em permissions, podemos adicionar usuário e sua permissão como: acesso total, leitura, escrita, etc.
 
+![Pasta Compartilhada](AD/image13.png)
 
+E para melhorar o ambiente para o usuário, criamos uma pasta de rede para o próprio usuário, então toda vez que o mesmo entrar, vai subir uma pasta de rede do usuário dele. Vamos em users no AD > Propriedades > Profile e tem a opção de se conectar a uma unidade de rede e o local da pasta. Ao adicionar e a pessoa logar pela primeira vez, deverá subir o sistema da pasta.
 
+Código: \\server\pasta$\%username%
 
+![Pasta de Rede](AD/image14.png)
 
-Ok achando o mesmo vamos configurar o computador para o domínio:
-Iniciar+r e escreva sysdm.cpl e da enter, ao entrar vai em alterar e depois selecione domínio e coloque o domínio criado anteriormente, acabando vai pedir para reiniciar.
+Agora, iremos configurar Shadow Copies. Vamos em Este Computador > seu disco > botão direito > shadow copies.
 
-<img src="AD/image10.png">
-<img src="AD/image11.png">
-Ao reiniciar você já pode colocar um usuário de rede, se você observar a print tem entrar em: GABRIELSECURITY (Domínio)
+![Shadow Copies](AD/image17.png)
 
-<img src="AD/image12.png">
+Vamos em settings para podermos inserir a quantidade de cota das shadow copies. Depois de aplicar, já está como enable, podemos apertar no botão de create now.
 
-Voltando no Windows Server 2012 R2 podemos criar uma pasta compartilhada via rede, então criamos essa *securityfile** e fomos em propriedades>compartilhamento>compartilhamento advanced sharing e nisso selecionamos a opção de compartilhar essa pasta, ao ir no permissions podemos está adicionando usuário e sua permissão como; acesso total, leitura, escrita e etc.
-<img src="AD/image13.png">
+![Configuração de Shadow Copies](AD/image27.png)
 
-e para melhoramos o ambiente para o usuário criamos uma pasta de rede para o próprio, então toda vez que o mesmo entrar vai subir uma pasta de rede do usuário dele. Vamos ir em users no AD>Propriedades>Profile e tem a opção de se conectar a uma unidade de rede e o local da pasta ao adicionar e a pessoa logar pela primeira vez deverá subir o sistema da pasta.
-código: \\server\pasta$\%username%
+Criei um arquivo teste.txt de teste, porém o arquivo só será feito o shadow copie dele às 7 horas da manhã, pois o horário foi setado.
 
-<img src="AD/image14.png">
+![Arquivo de Teste](AD/image18.png)
 
-Agora iremos configurar Shadow Copies, vamos em este computador>seu disco>botão direito> shadow copies.
+Iremos criar de novo, após ter sido excluído o mesmo. Então voltamos ao C:/ e fomos até propriedades > versões anteriores, o que mostra toda vez que a função do shadow copies foi efetuada e que possa retornar a ela.
 
-<img src="AD/image17.png">
+![Versões Anteriores](AD/image19.png)
 
+Selecionamos a data/hora na qual o arquivo não estava excluído e vamos em abrir/open.
 
-Vamos em settings para podermos inserir a quantidade de cota da shadow copies depois de aplicar já está como enable, podemos apertar no botão de create now
+![Recuperação de Arquivo](AD/image20.png)
 
-<img src="AD/image27.png">
+Como por redundância e questões de segurança, iremos criar um sistema de backup nativo do Windows Server. Vamos criar um novo recurso a partir do wizard, onde o caminho seria abrir o Server Manager > Dashboard > Next até Features/Recursos, selecionar backup do Windows Server e instalar.
 
+![Instalação de Backup](AD/image22.png)
+![Instalação de Backup](AD/image21.png)
 
-Criei um arquivo teste.txt de teste, porém o arquivo só irá ser feito o shadow copie dele ás 7horas da manhã pois o horário setado.
+Ok, já instalado, você irá abrir Ferramentas > Backup do Windows Server. Agora, iremos em opções de backup/backup once/backup único.
 
-<img src="AD/image18.png">
+![Backup do Windows Server](AD/image23.png)
 
-   
-Iremos criar de novo, após foi excluído o mesmo.
-Então voltamos ao c:/ e fomos até propriedades>versões anteriores no qual mostra toda vez que a função do shadow copies foi efetuada e que possa retornar a ela.
+Colocamos em opções diferentes.
 
-<img src="AD/image19.png">
+![Opções de Backup](AD/image24.png)
 
-Selecionamos a data/hora no qual o arquivo não estava excluído e vamos em abrir/open
+A seleção de configuração de backup foi colocada em custom/personalizado.
 
+![Configuração de Backup Personalizado](AD/image26.png)
 
-<img src="AD/image20.png">
+Então, na próxima etapa, escolhemos o item que deverá ser feito o backup.
 
+![Seleção de Itens para Backup](AD/image25.png)
 
-   Como por redundância e questões de segurança, iremos criar um sistema de backup nativo do Windows server.
-   No qual iremos criar um novo recurso a parti do wizard ao qual o caminho seria abrir o server manager>dashboard>next até features/recursos, selecionar backup do Windows server e instalar. 
-
-<img src="AD/image22.png">
-<img src="AD/image21.png">
-
-  Ok já instalado você irá abrir ferramentas>backup do Windows server
-  Agora iremos em opções de backup/backup once/ backup unico
-  
-
-<img src="AD/image23.png">
-  Colocamos em opções diferente
-
-  
-<img src="AD/image24.png">
-
-
-
-  Seleção de configuração de backup foi colocado custom/personalizado 
-
-<img src="AD/image26.png">
-
-  Entao na próximo etapa escolhemos o item que deverá ser feito o backup
-
-<img src="AD/image25.png">
-
-  Agora para finalizar só avançar até confirmação e realizar o backup
-
-  
+Agora, para finalizar, só avançar até confirmação e realizar o backup.
